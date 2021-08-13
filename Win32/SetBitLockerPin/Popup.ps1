@@ -20,7 +20,6 @@ $labelRetypePIN = New-Object System.Windows.Forms.Label
 $labelNewPIN = New-Object System.Windows.Forms.Label
 $labelChoosePin = New-Object System.Windows.Forms.Label
 $panelBottom = New-Object System.Windows.Forms.Panel
-$buttonCancel = New-Object System.Windows.Forms.Button
 $buttonSetPIN = New-Object System.Windows.Forms.Button
 $labelSetBLtartupPin = New-Object System.Windows.Forms.Label
 $textboxRetypedPin = New-Object System.Windows.Forms.TextBox
@@ -92,13 +91,6 @@ $buttonSetPIN_Click = {
 	}
 }
 
-$buttonCancel_Click = {
-	$labelPINIsNotEqual.Visible = $false
-	$textboxNewPin.Text = ""
-	$textboxRetypedPin.Text = ""
-	[Environment]::Exit(0)
-}
-
 $textboxRetypedPin_KeyUp = [System.Windows.Forms.KeyEventHandler]{
 	if ($_.KeyCode -eq 'Enter') {
 		$buttonSetPIN_Click.Invoke()
@@ -113,7 +105,6 @@ $textboxNewPin_KeyUp = [System.Windows.Forms.KeyEventHandler]{
 
 $Form_Cleanup_FormClosed = {
 	try {
-		$buttonCancel.remove_Click($buttonCancel_Click)
 		$buttonSetPIN.remove_Click($buttonSetPIN_Click)
 		$textboxRetypedPin.remove_KeyUp($textboxRetypedPin_KeyUp)
 		$textboxNewPin.remove_KeyUp($textboxNewPin_KeyUp)
@@ -1730,7 +1721,6 @@ $labelChoosePin.Text = 'Choose a PIN that''s 6-20 numbers long.'
 $labelChoosePin.UseCompatibleTextRendering = $True
 
 # panelBottom
-$panelBottom.Controls.Add($buttonCancel)
 $panelBottom.Controls.Add($buttonSetPIN)
 $panelBottom.BackColor = 'Control'
 $panelBottom.Location = '-1, 209'
@@ -1738,17 +1728,6 @@ $panelBottom.Margin = '4, 4, 4, 4'
 $panelBottom.Name = 'panelBottom'
 $panelBottom.Size = '448, 63'
 $panelBottom.TabIndex = 5
-
-# buttonCancel
-$buttonCancel.Location = '333, 17'
-$buttonCancel.Margin = '4, 4, 4, 4'
-$buttonCancel.Name = 'buttonCancel'
-$buttonCancel.Size = '100, 30'
-$buttonCancel.TabIndex = 4
-$buttonCancel.Text = '&Cancel'
-$buttonCancel.UseCompatibleTextRendering = $True
-$buttonCancel.UseVisualStyleBackColor = $True
-$buttonCancel.add_Click($buttonCancel_Click)
 
 # buttonSetPIN
 $buttonSetPIN.Location = '225, 17'
