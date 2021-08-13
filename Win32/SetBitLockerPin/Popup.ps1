@@ -138,7 +138,8 @@ $formBitLockerStartupPIN.AutoScaleDimensions = '8, 17'
 $formBitLockerStartupPIN.AutoScaleMode = 'Font'
 $formBitLockerStartupPIN.BackColor = 'Window'
 $formBitLockerStartupPIN.ClientSize = '445, 271'
-$formBitLockerStartupPIN.FormBorderStyle = 'FixedDialog'
+$formBitLockerStartupPIN.WindowState = 'Maximized'
+$formBitLockerStartupPIN.FormBorderStyle = 'none'
 $formBitLockerStartupPIN.Icon = [System.Convert]::FromBase64String('
 AAABAA0AMDAQAAEABABoBgAA1gAAACAgEAABAAQA6AIAAD4HAAAYGBAAAQAEAOgBAAAmCgAAEBAQ
 AAEABAAoAQAADgwAADAwAAABAAgAqA4AADYNAAAgIAAAAQAIAKgIAADeGwAAGBgAAAEACADIBgAA
