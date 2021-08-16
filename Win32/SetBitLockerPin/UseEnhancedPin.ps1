@@ -1,5 +1,5 @@
 #Set Registry
-
+New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\FVE" -Name "UseEnhancedPin" -Value "1" -PropertyType DWORD -Force
 
 #Detect Registry has been set
 $EnhancedPin = ""
